@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, CheckBox } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+
 
 const Item = (props) => {
 
@@ -77,10 +77,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 5,
       },
-
-
-
-
 
 
 

@@ -1,16 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity, FlatList, TextInput,Modal, CheckBox } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity, FlatList, TextInput,Modal } from 'react-native';
 import Item from './components/Item'
 
-
-
-
-
-
-const Stack = createStackNavigator();
 
 
 export default function App() {
@@ -18,17 +10,12 @@ export default function App() {
   const [task, setTask] = useState('')
   const [modal, setModal] = useState(false)
   const [itemArray, setItemArray] = useState([])
-  
 
-  /* const componentHideAndShow = () => {
-    setInputBox(previousState => ({ inputBox: !previousState.inputBox }))
-  } */
 
   function addItem() {
    setItemArray(itemArray =>[...itemArray,task])
    setModal(false)
    setTask('')
-   //alert(itemArray)
   }
 
  
@@ -59,20 +46,6 @@ export default function App() {
 
     <View style={styles.wrapper}>
      
-
-      {/* {
-         <Item text={"hello my name is jdhfskhhhhhhhhhhhhhh"}/>
-        // Display the content in screen when state object "content" is true.
-        // Hide the content in screen when state object "content" is false. 
-        inputBox ?  <TextInput
-       multiline 
-       placeholder="Write your message"
-       style={styles.items}
-       onChangeText={(val) => setTask(val)}
-       value={task}
-       maxLength={30}
-    /> : null
-      } */}
 
     <Modal
       animationType='slide'
@@ -115,15 +88,7 @@ export default function App() {
     />
     </SafeAreaView>
        
-
-
-
     </View>
-
-
-
-
-
 
     </View>
   );
