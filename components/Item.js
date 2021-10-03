@@ -34,7 +34,7 @@ const Item = (props) => {
         >
       </TouchableOpacity> 
         </View>
-        <Text style={styles.itemText}>{props.text}</Text>
+        <Text style={styles.itemText}>{props.text} {props.key}</Text>
       </View>
     </View>
 
@@ -59,13 +59,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexWrap: 'wrap'
       },
-      square: {
-        width: 24,
-        height: 24,
-        backgroundColor: '#f3e9fb',
-        borderRadius: 5,
-        marginRight: 15,
-      },
+      
       itemText: {
         maxWidth: '90%',
         fontSize:20
@@ -76,6 +70,14 @@ const styles = StyleSheet.create({
         borderColor: '#f3e9fb',
         borderWidth: 2,
         borderRadius: 5,
+      },
+
+      square: {
+        width: 24,
+        height: 24,
+        backgroundColor: '#f3e9fb',
+        borderRadius: 5,
+        marginRight: 15,
       },
 
 

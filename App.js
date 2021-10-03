@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, SafeAreaView, View, TouchableOpacity, FlatList, TextInput,Modal } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, ScrollView, View, TouchableOpacity, FlatList, TextInput,Modal } from 'react-native';
 import Item from './components/Item'
 
 
@@ -73,9 +73,9 @@ export default function App() {
     </Modal>
 
     <SafeAreaView style={styles.container1} >
-    <FlatList
+     <FlatList
       data={itemArray}
-      keyExtractor={(item)=>item.key}
+      keyExtractor={(item, index) => index.toString()} //this fixed the key bug
       renderItem={({item}) => (
         <TouchableOpacity>
         <Item 
@@ -85,9 +85,9 @@ export default function App() {
         </TouchableOpacity>
        
       )}
-    />
+    /> 
     </SafeAreaView>
-       
+
     </View>
 
     </View>
@@ -100,6 +100,83 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f5',
   },
 
+  header: {
+      paddingTop: 80,
+      paddingBottom:20,
+      paddingHorizontal: 20,
+      backgroundColor: '#ae6fe8',
+   
+    },
+
+    headerComp: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+      
+  
+    },
+
+    addButton: {
+      elevation:8,
+      padding:10,
+      paddingHorizontal:25,
+      backgroundColor:'#f3e9fb',
+      borderRadius:5,
+  
+  
+    },
+
+    wrapper: {
+      paddingTop: 80,
+      paddingHorizontal: 20,
+      
+    },
+
+    centeredView: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 22
+    },
+
+    modalView: {
+      margin: 20,
+      backgroundColor: "white",
+      borderRadius: 20,
+      padding: 35,
+      alignItems: "center",
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5
+  },
+
+  
+  buttonModal: {
+      elevation:2,
+      marginTop:15,
+      padding:7,
+      paddingHorizontal:25,
+      backgroundColor:'#f3e9fb',
+      borderRadius:5,
+  
+  
+    },
+
+  container1: {
+    flexGrow: 1,
+    top:-60,
+    //height:433,
+    marginTop:2,
+    },
+      
+
   items: {
     paddingVertical: 15,
     paddingHorizontal: 15,
@@ -110,68 +187,7 @@ const styles = StyleSheet.create({
     width: 250,
   },
 
-  container1: {
-    flexGrow: 1,
-    top:-60,
-    //height:433,
-    marginTop:2,
-    },
-
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-
-  header: {
-    paddingTop: 80,
-    paddingBottom:20,
-    paddingHorizontal: 20,
-    backgroundColor: '#ae6fe8',
  
-  },
-
-  wrapper: {
-    paddingTop: 80,
-    paddingHorizontal: 20,
-    
-  },
-
-  headerComp: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    
-
-  },
-
-  addButton: {
-    elevation:8,
-    padding:10,
-    paddingHorizontal:25,
-    backgroundColor:'#f3e9fb',
-    borderRadius:5,
-
-
-  },
-
   writeTaskWrapper: {
     position: 'absolute',
     bottom: 60,
@@ -181,20 +197,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  buttonModal: {
-    elevation:2,
-    marginTop:15,
-    padding:7,
-    paddingHorizontal:25,
-    backgroundColor:'#f3e9fb',
-    borderRadius:5,
-
-
-  },
-
  
-
-
-
 
 });
