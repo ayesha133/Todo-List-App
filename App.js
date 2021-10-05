@@ -80,7 +80,7 @@ export default function App() {
         <TouchableOpacity>
         <Item 
         text={item}
-        key={item.key}
+        //key={item.key} not using this anymore
         />
         </TouchableOpacity>
        

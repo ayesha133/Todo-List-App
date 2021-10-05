@@ -34,7 +34,7 @@ const Item = (props) => {
         >
       </TouchableOpacity> 
         </View>
-        <Text style={styles.itemText}>{props.text} {props.key}</Text>
+        <Text style={styles.itemText}>{props.text} </Text>
       </View>
     </View>
 
